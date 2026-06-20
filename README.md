@@ -1,184 +1,198 @@
-# 🚀 LeadGen Connect MIS — Flutter App
 
-## پروجیکٹ کیا ہے؟
-LeadGen Connect ایک **پیشہ ورانہ Lead Management Information System** ہے جو Flutter میں بنا ہے۔ یہ 3-tier RBAC (Role-Based Access Control) system ہے جس میں Sales Agent, Manager اور Executive کے مختلف dashboards ہیں۔
+
+# 🚀 LeadGen Connect MIS (Flutter)
+
+LeadGen Connect is a **role-based Lead Management Information System (MIS)** built using Flutter.  
+It implements a **3-tier RBAC system** (Sales Agent, Manager, Executive) with separate dashboards, workflows, and permissions.
 
 ---
 
-## 📱 Screens (20 اسکرینز)
+## 📱 Application Overview
 
-| Screen | نام | کیا ہوتا ہے |
-|--------|-----|------------|
-| 0 | Onboarding | Game جیسی tutorial — بتاتا ہے کہاں کیا دبانا ہے |
-| 1 | Authentication | RBAC role select کرو |
-| 2 | Agent Dashboard | Pipeline overview |
-| 3 | Lead Form | نئی lead register کرو |
-| 4 | Active Queue | Lead roster |
-| 5 | Lead Profiler | Lead detail view |
-| 6 | Status Update | Log calls, chats |
-| 7 | Block Screen | Document کے بغیر BLOCKED |
-| 8 | Document Upload | Contract upload |
-| 9-10 | Pending State | Manager approval wait |
-| 11 | Manager Dashboard | Approval queue |
-| 12 | Pending Queue | Review file button |
-| 13 | Contract Review | Document verify |
-| 14 | Success/Reject | Deal close ya reject |
-| 15 | Team Performance | Agent win rates |
-| 16 | Executive Dashboard | Strategic DSS view |
-| 17 | Analytics Charts | Bar + Pie charts |
+This system simulates a real-world sales pipeline where leads move through multiple stages:  
+creation → tracking → verification → approval → analytics.
+
+The app includes:
+- Interactive onboarding experience
+- Role-based dashboards
+- Lead lifecycle management
+- Contract verification flow
+- Analytics and performance tracking
+
+---
+
+## 🎯 User Roles
+
+### 🔵 Sales Agent
+- Create and manage leads
+- Log calls and chats
+- Track lead status
+- Upload required documents
+- Move leads to closure stage
+
+⚠️ Cannot close deals without required documents
+
+---
+
+### 🟣 Sales Manager
+- Review submitted leads
+- Verify contracts
+- Approve or reject deals
+- Manage team pipeline
+
+---
+
+### 🟡 Executive
+- View strategic KPIs
+- Analyze performance charts
+- Access AI-based win predictions
+- Review system audit logs
+
+---
+
+## 📱 Screens Overview (20 Screens)
+
+| # | Screen | Purpose |
+|---|--------|--------|
+| 0 | Onboarding | Interactive tutorial flow |
+| 1 | Authentication | Role-based login |
+| 2 | Agent Dashboard | Lead pipeline overview |
+| 3 | Lead Form | Create new lead |
+| 4 | Active Queue | Lead list management |
+| 5 | Lead Profile | Detailed lead view |
+| 6 | Activity Logging | Calls & chats |
+| 7 | Block Screen | Restricted access handling |
+| 8 | Document Upload | Contract uploads |
+| 9–10 | Pending State | Waiting for approval |
+| 11 | Manager Dashboard | Review queue |
+| 12 | Pending Queue | Contract review list |
+| 13 | Contract Review | Verification screen |
+| 14 | Decision Screen | Approve / Reject |
+| 15 | Team Analytics | Performance metrics |
+| 16 | Executive Dashboard | Strategic overview |
+| 17 | Analytics Charts | Visual reports |
 | 18 | AI Predictions | Win probability model |
-| 19 | Audit Trail | Immutable system logs |
-| 20 | Session End | Logout |
+| 19 | Audit Trail | System logs |
+| 20 | Session End | Logout flow |
 
 ---
 
-## 🛠️ Setup — VS Code میں چلانے کا طریقہ
+## 🛠️ Installation & Setup
 
-### Step 1: Flutter Install کرو
-1. https://flutter.dev/docs/get-started/install سے Flutter SDK download کرو
-2. Path set کرو:
-   ```
-   Windows: System Variables > PATH > flutter/bin add کرو
-   Mac/Linux: export PATH="$PATH:/path/to/flutter/bin"
-   ```
-3. Check: `flutter doctor` — سب green ہونے چاہیے
+### 1. Install Flutter
+Download SDK: https://flutter.dev/docs/get-started/install
 
-### Step 2: VS Code Setup
-1. VS Code open کرو
-2. Extensions install کرو:
-   - **Flutter** (by Dart Code)
-   - **Dart** (by Dart Code)
+Then verify:
+```bash
+flutter doctor
+````
 
-### Step 3: Project Open کرو
-1. VS Code میں: `File > Open Folder`
-2. `leadgen_connect` folder select کرو
+---
 
-### Step 4: Packages Install کرو
-VS Code terminal میں:
+### 2. Open Project in VS Code
+
+Install extensions:
+
+* Flutter
+* Dart
+
+Open folder:
+
+```
+leadgen_connect
+```
+
+---
+
+### 3. Install Dependencies
+
 ```bash
 flutter pub get
 ```
 
-### Step 5: Device Connect کرو
-**Android:**
-- Android Studio install کرو
-- AVD Manager > Create Virtual Device
-- یا real phone: Developer Options > USB Debugging ON
+---
 
-**iOS (Mac only):**
-- Xcode install کرو
-- Simulator open کرو
+### 4. Run App
 
-### Step 6: Run کرو!
 ```bash
 flutter run
 ```
-یا VS Code میں `F5` دباؤ
 
----
+Or press:
 
-## 🎮 App کیسے Use کریں
-
-### Tutorial (پہلی بار)
-1. App کھلتے ہی **5 onboarding slides** آتی ہیں
-2. ہر slide پر **سبز hint box** ہوتا ہے — وہ پڑھو
-3. "Agla Step →" دباتے جاؤ
-4. آخر میں "Shuru Karo 🚀" دباؤ
-
----
-
-### 🔵 Sales Agent (Daniyal) کا Flow:
 ```
-Login > Agent Dashboard > "New Lead" FAB دباؤ
-> Form fill کرو > "Save to Database"
-> Lead list میں lead آئے گی
-> Lead tap کرو > "Log Call" > "Log Chat"
-> "Mark Closed-Won" دباؤ
-> ⚠️ BLOCKED ہوگا اگر document نہیں!
-> "Upload Doc" دباؤ > دوبارہ "Mark Closed-Won"
-> Status "Pending Verify" ہوجائے گا
+F5 (VS Code)
 ```
 
 ---
 
-### 🟣 Sales Manager کا Flow:
-```
-Login > Manager Dashboard > "Pending" tab
-> Lead card پر "Review File" دباؤ
-> Contract screen آئے گی
-> "Approve & Close" > ✅ Success dialog
-> یا "Reject Contract" > ❌ Lead lost
-```
+## 📂 Project Structure
 
----
-
-### 🟡 Executive کا Flow:
 ```
-Login > Executive Dashboard
-> "Strategic" tab — KPIs دیکھو
-> "Analytics" tab — Bar chart + Pie chart
-> "AI Forecast" tab — Win probability
-> "Audit" tab — Immutable logs دیکھو
+lib/
+├── main.dart
+├── theme/
+├── models/
+├── utils/
+├── widgets/
+└── screens/
 ```
 
 ---
 
-## 📁 Project Structure
+## ✨ Key Features
 
-```
-leadgen_connect/
-├── lib/
-│   ├── main.dart                    # App entry point
-│   ├── theme/
-│   │   └── app_theme.dart           # Dark glassmorphism theme
-│   ├── models/
-│   │   └── lead_model.dart          # Data models
-│   ├── utils/
-│   │   └── app_state.dart           # State management (Provider)
-│   ├── widgets/
-│   │   └── glass_widgets.dart       # Reusable glass components
-│   └── screens/
-│       ├── onboarding_screen.dart   # Tutorial (Screen 0)
-│       ├── auth_screen.dart         # Login (Screen 1)
-│       ├── agent_dashboard.dart     # Agent (Screens 2-4)
-│       ├── lead_form_screen.dart    # New Lead (Screen 3)
-│       ├── lead_detail_screen.dart  # Lead Detail (Screens 5-10)
-│       ├── manager_dashboard.dart   # Manager (Screens 11-15)
-│       ├── contract_review_screen.dart # Review (Screens 12-14)
-│       └── executive_dashboard.dart # Executive (Screens 16-20)
-├── pubspec.yaml
-└── README.md
-```
-
----
-
-## ✨ Features
-
-- 🌙 **Dark Glassmorphism UI** — professional look
-- 🎮 **Interactive Onboarding** — step-by-step tutorial
-- 🔒 **RBAC System** — 3 different role-based dashboards
-- 📊 **Interactive Charts** — Bar charts, Pie charts (fl_chart)
-- 🤖 **AI Predictions** — Mock ML model with win probabilities
-- 📋 **Immutable Audit Trail** — Every action logged
-- ⚡ **Business Rules** — Document required before closing
-- 💾 **State Management** — Provider pattern
+* 🌙 Glassmorphism UI
+* 🎮 Interactive onboarding
+* 🔐 Role-Based Access Control (RBAC)
+* 📊 Charts & analytics (fl_chart)
+* 🤖 AI-based win prediction (mock model)
+* 📋 Audit logging system
+* ⚡ Business rule enforcement
+* 💾 Provider state management
 
 ---
 
 ## ⚠️ Common Issues
 
-**`flutter pub get` fail:**
-→ Internet check کرو, VPN try کرو
+### Flutter pub get fails
 
-**Black screen on device:**
-→ `flutter clean && flutter pub get && flutter run`
+```bash
+flutter clean
+flutter pub get
+```
 
-**"No devices found":**
-→ Android: USB debugging on کرو
-→ iOS: Trust computer on iPhone
+### Device not detected
+
+```bash
+flutter devices
+```
+
+### Black screen issue
+
+```bash
+flutter clean
+flutter pub get
+flutter run
+```
 
 ---
 
-**Version:** 1.0.0  
-**Flutter SDK:** ≥3.0.0  
-**Built for:** LeadGen Connect MIS Academic Project
+## 📌 Tech Stack
+
+* Flutter
+* Dart
+* Provider
+* fl_chart
+* Material Design 3
+
+---
+
+## 📄 Version
+
+* v1.0.0
+* Academic MIS Project
+* Flutter SDK ≥ 3.0
+
+
+
