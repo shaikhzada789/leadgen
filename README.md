@@ -1,4 +1,11 @@
 
+<img width="1899" height="876" alt="Screenshot 2026-06-20 093644" src="https://github.com/user-attachments/assets/22965394-d668-4f4a-b2e6-ab91189b3c01" />
+<img width="1912" height="874" alt="Screenshot 2026-06-20 100834" src="https://github.com/user-attachments/assets/c3ed5229-85e9-45b2-8846-a6df62bec7aa" />
+<img width="1911" height="875" alt="Screenshot 2026-06-20 103142" src="https://github.com/user-attachments/assets/891407a9-d58e-4f4a-b4ca-e5c9dce46aa4" />
+<img width="1900" height="881" alt="Screenshot 2026-06-20 103229" src="https://github.com/user-attachments/assets/719be5b1-001b-4459-b011-ca8f2be6f60d" />
+
+
+
 
 # 🚀 LeadGen Connect MIS (Flutter)
 
